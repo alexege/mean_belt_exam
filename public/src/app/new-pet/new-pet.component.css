@@ -1,0 +1,23 @@
+.page-name {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    font-size: 12px;
+}
+
+.error {
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.good {
+    color: lime;
+}
+
+.bad {
+    color: red;
+}
+
+.disabled {
+    color: grey;
+}

@@ -1,0 +1,14 @@
+.page-name {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    font-size: 12px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+a {
+    margin-left: 10px;
+}

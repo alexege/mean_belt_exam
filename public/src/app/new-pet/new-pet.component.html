@@ -1,0 +1,38 @@
+<h4>Know of a pet needing a home?</h4>
+<form (submit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Pet Name:</label>
+        <p class="small text-danger">{{err?.name?.message}}</p>
+        <p class="small text-danger" *ngIf="name.errors && !name.pristine">Must be at least 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newPet.name" [(ngModel)]="newPet.name" required minlength="3" #name="ngModel">
+    </div>
+    <div class="form-group">
+        <label for="">Pet Type</label>
+        <p class="small text-danger">{{err?.type?.message}}</p>
+        <p class="small text-danger" *ngIf="type.errors && !type.pristine">Must be at least 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newPet.type" [(ngModel)]="newPet.type" required minlength="3" #type="ngModel">
+    </div>
+    <div class="form-group">
+        <label for="">Description:</label>
+        <p class="small text-danger">{{err?.description?.message}}</p>
+        <p class="small text-danger" *ngIf="description.errors && !description.pristine">Must be at least 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newPet.description" [(ngModel)]="newPet.description" required minlength="3" #description="ngModel">
+    </div>
+    <div class="form-group">
+        <label for="">Skills:</label><br><br>
+        <!-- <p class="small text-danger">{{err?.skills.message}}</p> -->
+        <label for="">Skill 1:
+            <input type="text" class="form-control w-200" name="newPet.skills" [(ngModel)]="newPet.skills">
+        </label><br>
+        <label for="">Skill 2:
+            <input type="text" class="form-control w-200" name="newPet.skills2" [(ngModel)]="newPet.skills2">
+        </label><br>
+        <label for="">Skill 3:
+            <input type="text" class="form-control w-200" name="newPet.skills3" [(ngModel)]="newPet.skills3">
+        </label>
+    </div>
+    <button *ngIf="!name.errors && !type.errors && !description.errors" type="submit">Submit</button>
+    <button disabled class="disabled" *ngIf="name.errors || type.errors || description.errors">Submit</button>
+    <!-- <button *ngIf="name.errors && type.errors && description.errors" type="submit">No Submit</button> -->
+    <p class="page-name">new-pet.component.html</p>
+</form>

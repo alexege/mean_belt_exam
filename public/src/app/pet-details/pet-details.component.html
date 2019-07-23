@@ -1,0 +1,34 @@
+<div *ngIf="petDetails">
+<h3>Details about {{petDetails.name}}</h3>
+<table class="table table-striped">
+    <tr>
+        <td>Pet Type:</td>
+        <td>{{petDetails.type}}</td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td>{{petDetails.description}}</td>
+    </tr>
+    <tr>
+        <td>Skills:</td>
+        <td>
+            {{petDetails.skills}}<span *ngIf="petDetails.skills2">,</span>
+            {{petDetails.skills2}}<span *ngIf="petDetails.skills3">,</span>
+            {{petDetails.skills3}}
+        </td>
+    </tr>
+    <tr>
+        <td>Likes:</td>
+        <td>{{petDetails.likes}}</td>
+    </tr>
+</table>
+<!-- <a [routerLink]="['like']" class="btn btn-primary btn-sm">Like</a> -->
+
+<button *ngIf="!enableLike" class="disabled">Like</button>
+<button (click)="likePet(petDetails._id)" *ngIf="enableLike">Like</button>
+<button (click)="deletePet(petDetails._id)">Adopt this pet!</button>
+</div>
+
+<!-- {{petDetails | json}} -->
+
+<p class="page-name">edit-pet.component.html</p>

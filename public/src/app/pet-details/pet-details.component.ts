@@ -12,7 +12,6 @@ export class PetDetailsComponent implements OnInit {
   err: any;
   enableLike: boolean = true;
   likes: Number;
-  current_likes: any;
   constructor(private _httpService: HttpService, private _route: Router, private _router: ActivatedRoute) { }
   
   ngOnInit() {
